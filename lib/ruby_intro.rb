@@ -143,6 +143,43 @@ end
 
 # Part 3
 
-class BookInStock
-# YOUR CODE HERE
-end
+
+ class BookInStock
+   def initialize(isbn, price)
+     if isbn == nil || isbn.length == 0 || price <= 0
+       raise ArgumentError
+     end
+     @isbn = isbn
+     @price = price
+   end
+ 
+  #isbn setter
+   def isbn=isbn
+     if isbn == nil || isbn.length == 0
+       raise ArgumentError
+     end
+     @isbn = isbn
+   end
+ 
+ #price setter
+   def price=price
+     if price <= 0
+       raise ArgumentError
+     end
+     @price = price
+   end
+   
+  #isbn getter
+   def isbn
+     return @isbn
+   end
+ 
+  # price getter
+   def price
+     return @price
+   end
+ 
+   def price_as_string
+     return sprintf("$%.2f", @price)
+   end
+ end
